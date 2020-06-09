@@ -8,10 +8,26 @@
 
 import UIKit
 
-class FootDetailTVC: UITableViewController {
+class FootDetailTVC: UITableViewController
+{
+    var footDetailModels: [FootDetailModel] = [FootDetailModel]()
+    {
+        didSet
+        {
+            tableView.reloadData()
+        }
+    }
+    
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(getDetailDataNoti(notification:)), name: Notification.Name(rawValue: kChangeTypeNotificaiton), object: nil)
+    }
+    @objc func getDetailDataNoti(notification: Notification)
+    {
+        let type = notification.object as! TypeModel
+        footDetailModels = DataTool.getDetailData(idstr: (type.idstr)!)
 
     }
 
@@ -19,13 +35,16 @@ class FootDetailTVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 10
+        return footDetailModels.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "footDetailIdentifier", for: indexPath)
+        let footDetailModel = footDetailModels[indexPath.row]
+        cell.textLabel?.text = footDetailModel.name
+        
 
         return cell
     }
