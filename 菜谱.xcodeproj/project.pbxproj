@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		F939570A248FA9B8004CEC2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9395709248FA9B8004CEC2F /* AppDelegate.swift */; };
-		F939570E248FA9B8004CEC2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F939570D248FA9B8004CEC2F /* ViewController.swift */; };
 		F9395711248FA9B8004CEC2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F939570F248FA9B8004CEC2F /* Main.storyboard */; };
 		F9395713248FA9BA004CEC2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9395712248FA9BA004CEC2F /* Assets.xcassets */; };
 		F9395716248FA9BA004CEC2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9395714248FA9BA004CEC2F /* LaunchScreen.storyboard */; };
 		F9395721248FA9BA004CEC2F /* __Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9395720248FA9BA004CEC2F /* __Tests.swift */; };
 		F939572C248FA9BA004CEC2F /* __UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F939572B248FA9BA004CEC2F /* __UITests.swift */; };
+		F9395745248FAC01004CEC2F /* FootMastertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9395744248FAC01004CEC2F /* FootMastertVC.swift */; };
+		F9395747248FAC20004CEC2F /* FootDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9395746248FAC20004CEC2F /* FootDetailTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		F9395706248FA9B8004CEC2F /* 菜谱.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "菜谱.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9395709248FA9B8004CEC2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F939570D248FA9B8004CEC2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F9395710248FA9B8004CEC2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F9395712248FA9BA004CEC2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9395715248FA9BA004CEC2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +47,8 @@
 		F9395727248FA9BA004CEC2F /* 菜谱UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "菜谱UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F939572B248FA9BA004CEC2F /* __UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __UITests.swift; sourceTree = "<group>"; };
 		F939572D248FA9BA004CEC2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9395744248FAC01004CEC2F /* FootMastertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootMastertVC.swift; sourceTree = "<group>"; };
+		F9395746248FAC20004CEC2F /* FootDetailTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootDetailTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +99,8 @@
 		F9395708248FA9B8004CEC2F /* 菜谱 */ = {
 			isa = PBXGroup;
 			children = (
-				F9395709248FA9B8004CEC2F /* AppDelegate.swift */,
-				F939570D248FA9B8004CEC2F /* ViewController.swift */,
-				F939570F248FA9B8004CEC2F /* Main.storyboard */,
-				F9395712248FA9BA004CEC2F /* Assets.xcassets */,
-				F9395714248FA9BA004CEC2F /* LaunchScreen.storyboard */,
+				F939573A248FAB1F004CEC2F /* Classes */,
+				F9395739248FAB1C004CEC2F /* Resource */,
 				F9395717248FA9BA004CEC2F /* Info.plist */,
 			);
 			path = "菜谱";
@@ -123,6 +122,98 @@
 				F939572D248FA9BA004CEC2F /* Info.plist */,
 			);
 			path = "菜谱UITests";
+			sourceTree = "<group>";
+		};
+		F9395739248FAB1C004CEC2F /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F939570F248FA9B8004CEC2F /* Main.storyboard */,
+				F9395712248FA9BA004CEC2F /* Assets.xcassets */,
+				F9395714248FA9BA004CEC2F /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		F939573A248FAB1F004CEC2F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F939573D248FAB39004CEC2F /* FootDetail(详细菜单) */,
+				F939573C248FAB34004CEC2F /* FootMaster(主菜单) */,
+				F939573B248FAB31004CEC2F /* Other */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F939573B248FAB31004CEC2F /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				F9395709248FA9B8004CEC2F /* AppDelegate.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		F939573C248FAB34004CEC2F /* FootMaster(主菜单) */ = {
+			isa = PBXGroup;
+			children = (
+				F9395743248FAB7A004CEC2F /* Controller */,
+				F9395742248FAB79004CEC2F /* Model */,
+				F9395741248FAB77004CEC2F /* View */,
+			);
+			path = "FootMaster(主菜单)";
+			sourceTree = "<group>";
+		};
+		F939573D248FAB39004CEC2F /* FootDetail(详细菜单) */ = {
+			isa = PBXGroup;
+			children = (
+				F9395740248FAB75004CEC2F /* Controller */,
+				F939573F248FAB74004CEC2F /* Model */,
+				F939573E248FAB72004CEC2F /* View */,
+			);
+			path = "FootDetail(详细菜单)";
+			sourceTree = "<group>";
+		};
+		F939573E248FAB72004CEC2F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F939573F248FAB74004CEC2F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F9395740248FAB75004CEC2F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F9395746248FAC20004CEC2F /* FootDetailTVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F9395741248FAB77004CEC2F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F9395742248FAB79004CEC2F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F9395743248FAB7A004CEC2F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F9395744248FAC01004CEC2F /* FootMastertVC.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +347,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F939570E248FA9B8004CEC2F /* ViewController.swift in Sources */,
 				F939570A248FA9B8004CEC2F /* AppDelegate.swift in Sources */,
+				F9395745248FAC01004CEC2F /* FootMastertVC.swift in Sources */,
+				F9395747248FAC20004CEC2F /* FootDetailTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
